@@ -48,8 +48,8 @@ if __name__ == '__main__':
    # warnings.filterwarnings("ignore", category=DeprecationWarning)
    print("Preparing MLFLOW Run")
 
-#    regularizer = int(sys.argv[1]) if len(sys.argv) > 1 else 1.0
-   params = {'regularizer': 1.0}
+#    regularizer = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+   params = {'regularizer': 1}
    
    model = mlflow_run(params)
 
