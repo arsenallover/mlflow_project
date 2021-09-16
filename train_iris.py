@@ -30,7 +30,7 @@ print(x_train.shape, x_test.shape)
 # Enable auto-logging to MLflow to capture TensorBoard metrics.
 mlflow.autolog()
 
-def mlflow_run(params):#, run_name="Tracking Experiment: iris logisitic regression"):
+def mlflow_run(params, run_name="Tracking Experiment: iris logisitic regression"):
   with mlflow.start_run(run_name=run_name) as run:
     # get current run and experiment id
     # runID = run.info.run_uuid
