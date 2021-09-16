@@ -5,5 +5,5 @@ conda_env: conda.yaml
 entry_points:
   main:
     parameters:
-      regularizer: {type: int, default: 1.0}
+      regularizer: {type: float, default: 1.0}
     command: "python train_iris.py {regularizer}"
