@@ -12,7 +12,9 @@ from sklearn.metrics import accuracy_score
 # mlflow packages
 import mlflow
 from mlflow import pyfunc
-import mlflow.tensorflow
+import warnings
+import mlflow.pyfunc
+import sys
 
 # Load in the data
 iris = load_iris()
