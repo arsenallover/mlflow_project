@@ -28,7 +28,7 @@ x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 print(x_train.shape, x_test.shape)
 
 # Enable auto-logging to MLflow to capture TensorBoard metrics.
-mlflow.tensorflow.autolog()
+mlflow.autolog()
 
 def mlflow_run(params):#, run_name="Tracking Experiment: iris logisitic regression"):
   with mlflow.start_run(run_name=run_name) as run:
