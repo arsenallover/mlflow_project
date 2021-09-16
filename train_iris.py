@@ -30,7 +30,7 @@ print(x_train.shape, x_test.shape)
 # Enable auto-logging to MLflow to capture TensorBoard metrics.
 mlflow.tensorflow.autolog()
 
-def mlflow_run(params, run_name="Tracking Experiment: iris logisitic regression"):
+def mlflow_run(params):#, run_name="Tracking Experiment: iris logisitic regression"):
   with mlflow.start_run(run_name=run_name) as run:
     # get current run and experiment id
     # runID = run.info.run_uuid
@@ -48,9 +48,9 @@ if __name__ == '__main__':
    # warnings.filterwarnings("ignore", category=DeprecationWarning)
    print("Preparing MLFLOW Run")
 
-   regularizer = int(sys.argv[1]) if len(sys.argv) > 1 else 1.0
-   params = {'regularizer': regularizer}
+#    regularizer = int(sys.argv[1]) if len(sys.argv) > 1 else 1.0
+   params = {'regularizer': 1.0}
    
    model = mlflow_run(params)
 
-   print(f"Finished training")
+   print("Finished training")
