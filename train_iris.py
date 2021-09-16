@@ -50,4 +50,4 @@ if __name__ == '__main__':
    
    model = mlflow_run(params)
 
-   print(f"Finished raining)
+   print(f"Finished training")
