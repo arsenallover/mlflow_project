@@ -31,14 +31,14 @@ mlflow.tensorflow.autolog()
 def mlflow_run(params, run_name="Tracking Experiment: iris logisitic regression"):
   with mlflow.start_run(run_name=r_name) as run:
     # get current run and experiment id
-    runID = run.info.run_uuid
-    experimentID = run.info.experiment_id
+    # runID = run.info.run_uuid
+    # experimentID = run.info.experiment_id
         
-	# train model
+    # train model
     model = LogisticRegression(penalty = "l2", C=params["regularizer"])
     model.fit(x_train, y_train)
 
-  return (experimentID, runID)
+  return model
 
 # Use the model
 if __name__ == '__main__':
@@ -48,6 +48,6 @@ if __name__ == '__main__':
    regularizer = int(sys.argv[1]) if len(sys.argv) > 1 else 1.0
    params = {'regularizer': regularizer}
    
-   (exp_id, run_id) = mlflow_run(params)
+   model = mlflow_run(params)
 
-   print(f"Finished Experiment id={exp_id} and run id = {run_id}")
+   print(f"Finished raining)
