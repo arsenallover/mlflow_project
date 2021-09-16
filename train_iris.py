@@ -47,7 +47,7 @@ if __name__ == '__main__':
    # suppress any deprecated warnings
    warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-   regularizer = float(sys.argv[1]) if len(sys.argv) > 1 else 1.0
+   regularizer = int(sys.argv[1]) if len(sys.argv) > 1 else 1.0
    params = {'regularizer': regularizer}
    
    model = mlflow_run(params)
