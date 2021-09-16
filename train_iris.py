@@ -18,7 +18,7 @@ import sys
 
 # Load in the data
 iris = load_iris()
-
+print("read data")
 df = pd.DataFrame(data= np.c_[iris['data'], iris['target']],
                      columns= iris['feature_names'] + ['target'])
 
@@ -45,7 +45,8 @@ def mlflow_run(params, run_name="Tracking Experiment: iris logisitic regression"
 # Use the model
 if __name__ == '__main__':
    # suppress any deprecated warnings
-   warnings.filterwarnings("ignore", category=DeprecationWarning)
+   # warnings.filterwarnings("ignore", category=DeprecationWarning)
+   print("Preparing MLFLOW Run")
 
    regularizer = int(sys.argv[1]) if len(sys.argv) > 1 else 1.0
    params = {'regularizer': regularizer}
