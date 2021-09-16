@@ -31,7 +31,7 @@ print(x_train.shape, x_test.shape)
 mlflow.tensorflow.autolog()
 
 def mlflow_run(params, run_name="Tracking Experiment: iris logisitic regression"):
-  with mlflow.start_run(run_name=r_name) as run:
+  with mlflow.start_run(run_name=run_name) as run:
     # get current run and experiment id
     # runID = run.info.run_uuid
     # experimentID = run.info.experiment_id
@@ -47,7 +47,7 @@ if __name__ == '__main__':
    # suppress any deprecated warnings
    warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-   regularizer = int(sys.argv[1]) if len(sys.argv) > 1 else 1.0
+   regularizer = float(sys.argv[1]) if len(sys.argv) > 1 else 1.0
    params = {'regularizer': regularizer}
    
    model = mlflow_run(params)
